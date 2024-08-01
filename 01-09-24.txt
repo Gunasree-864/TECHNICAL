@@ -135,6 +135,35 @@ print(b)
 
 **************************************************************************************************************************************************
 
+6. John plays basketball each season he maintains a record of his play. He creates a list, the no of times he breaks his season record for most points and least points in a game.
+Points scored in a first match establish his record for the season and he begins counting from there.
+scores=[12,20,14,10,18,15,9]
+maxscore=20 count=1
+minscore=9 count=2
+
+input:
+12 20 14 10 18 15
+
+output:
+1 2
+
+#code
+a=list(map(int,input().split(" ")))
+maxscore=a[0]
+minscore=a[0]
+maxcount=0
+mincount=0
+for i in a:
+    if i>maxscore:
+        maxcount+=1
+        maxscore=i
+    elif i<minscore:
+        mincount+=1
+        minscore=i
+print(maxcount,mincount)
+
+********************************************************************************************************************************************
+
 
 
 
