@@ -237,5 +237,55 @@ for i in range(1,min(b)+1):
         if flag2==len(b):
             count+=1
 print(count)
-            
+*************************************************************************************************************************************
 
+9. There is a large pile of socks that must be paired by color. Given an array of integers representing the color of each socks. Determined how many pairs of socks with matching colours there are.
+input:
+1 1 2 3 2 1 1 1 2
+output:
+3---->(2+1)
+
+#code
+a=list(map(int,input().split(" ")))
+sum=0
+b=[]
+for i in a:
+    if i not in b:
+        b.append(i)
+for i in b:
+    cnt=a.count(i)
+    pairs=cnt//2
+    sum+=pairs
+print(sum) 
+
+**********************************************************************************************************************************************
+
+10. Given an array of integers, find the longest subarray where the absolute difference between any two elements is less than or equals to 1
+a=[1,1,2,2,4,4,5,5,5]
+[1,1,2,2]=4
+[4,4,5,5,5]=5
+input:
+1 1 2 2 4 4 5 5 5
+
+output:
+5--->max such subarray length
+
+#code
+a=list(map(int,input().split(" ")))
+b=set(a)
+maxcnt=0
+for i in b:
+    cnt=a.count(i)
+    cnt1=a.count(i+1)
+    cnt2=a.count(i-1)
+    if(cnt1>cnt2):
+        cnt=cnt+cnt1
+    else:
+        cnt=cnt+cnt2
+    
+    if cnt>maxcnt:
+        maxcnt=cnt
+print(maxcnt)
+        
+        
+*********************************************************************************************************************************************************
