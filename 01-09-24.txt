@@ -162,8 +162,48 @@ for i in a:
         minscore=i
 print(maxcount,mincount)
 
-********************************************************************************************************************************************
+************************************************************************************************************************************************
+
+7.A person wants to determine the most expensive computer keyboard and usb drive that can be purchased with given budget. Given price arrays for keyboards and usb drives and a budget find the cost to buy them. if he can't buy them return -1.
+b=60
+k=[40,50,60]
+u=[5,8.12]
+
+#code
+def cost(b,k,u):
+    ke,us=0,0
+    max=0
+    for i in k:
+        for j in u:
+            if(i+j<b and i+j>=max):
+                max=i+j
+                ke=i
+                us=j
+    if(ke==0 or us==0):
+        return -1
+    else:
+        return (ke+us)
+b=int(input())
+k=list(map(int,input().split(" ")))
+u=list(map(int,input().split(" ")))
+print(cost(b,k,u))
+----------------------------------------------------------------------
+
+def cost(b,k,u):
+    res=[]
+    for i in k:
+        for j in u:
+            if(i+j<=b ):
+                res.append(i+j)
+    if(len(res)==0):
+        return (-1)
+    else:
+        return (max(res))
+b=int(input())
+k=list(map(int,input().split(" ")))
+u=list(map(int,input().split(" ")))
+print(cost(b,k,u))
 
 
-
+**********************************************************************************************************************************************************
 
